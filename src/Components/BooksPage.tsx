@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../CSS/booksPage.module.scss';
 import { SearchResults } from './SearchResults';
 
 export interface Book {
@@ -11,6 +10,14 @@ export const BooksPage = () => {
     const [books, setBooks] = useState<Book[]>([]);
     const [search, setSearch] = useState("");
     const [mode, setMode] = useState("Loading");
+    const [nextPage, setNextPage] = useState(2)
+
+    const loadMoreBooks = () => {
+        fetch(`http://localhost:3001/books?search=${search}&page=${nextPage}`)
+            .then(response => response.json())
+            .then(json => setBooks(books.concat(json.books)))
+        setNextPage(nextPage + 1);
+    }
 
     useEffect(() => {
         setMode("Loading");
@@ -26,7 +33,7 @@ export const BooksPage = () => {
             <div className="search">
                 <input type="text" id="search" placeholder="Search..." value={search} onChange={ (event) => setSearch(event.target.value) } />
             </div>
-            {mode === 'Ready' && <SearchResults books={books} />}
+            {mode === 'Ready' && <SearchResults books={books} loadMore={loadMoreBooks} />}
             {mode === 'Loading' && <p className="loading">Loading...</p>}
         </section>
     )

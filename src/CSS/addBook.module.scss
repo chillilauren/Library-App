@@ -1,0 +1,29 @@
+.form {
+    -webkit-box-shadow: -9px 10px 13px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 10px 13px -9px rgba(0,0,0,0.75);
+    box-shadow: -9px 10px 13px -9px rgba(0,0,0,0.75);
+    width: 80vw;
+    margin: 0 auto 30px auto;
+    background: #E28665;
+    // background: red;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    label {
+        display: inline-block;
+        margin: 10px 0;
+        font-weight: 500;
+        input {
+            padding: 5px;
+            margin: 5px 0;
+            width: 90%;
+            color: #89381A;
+            border-radius: 5px;
+            border-color: #EBAE98;
+        }
+    }
+    button {
+        width: 200px;
+        margin: 15px auto;
+    }
+}

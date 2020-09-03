@@ -7,6 +7,7 @@ import { BookDetailsPage } from './Components/BookDetailsPage';
 import { MemberDetailsPage } from './Components/MemberDetailsPage';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './CSS/App.scss';
+import { AddBook } from './Components/AddBook';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         </Route>
 
         {/* Books pages */}
+        <Route path="/books/add">
+          <AddBook />
+        </Route>
         <Route path="/books/:id" >
           <BookDetailsPage />
         </Route>

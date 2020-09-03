@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Book } from './BooksPage';
-import styles from '../CSS/booksPage.module.scss';
+import styles from '../CSS/searchResults.module.scss';
+import { Link } from 'react-router-dom';
 
 
 interface SearchResultProps {
-    books: Book[]
+    books: Book[];
+    loadMore: () => void;
 }
 
 interface BookProps {
@@ -15,7 +17,7 @@ const BookListItem = ({book}:BookProps) => {
     return <li>{book.title} - {book.author}</li>
 }
 
-export const SearchResults = ({books}:SearchResultProps) => {
+export const SearchResults = ({books, loadMore}:SearchResultProps) => {
     const bookList = books.map((book) => {
         return <BookListItem book={book} />
     })
@@ -31,7 +33,14 @@ export const SearchResults = ({books}:SearchResultProps) => {
                     {bookList}
                 </ul>
             </div>
-            <button className="more">Load More</button>
+            <div className="btn-container">
+                <button className="btn" onClick={loadMore}>Load more</button>
+                <button className="btn">
+                    <Link className="add-btn" to="/books/add">Add new book</Link>
+                </button>
+                
+                
+            </div>
         </section>
     )
 }
