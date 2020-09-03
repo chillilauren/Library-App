@@ -33,6 +33,24 @@ body,html {
     }
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading {
+    text-align: center;
+}
+
+.more {
+    margin: 30px auto 20px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-color: #EBAE98;
+    max-width: 200px;
+    min-width: 200px;
+}
+
 // @media only screen and (min-width: 374px) {
 //     * {
 //         font-size: 20px;

@@ -33,8 +33,31 @@ export const BookDetailsPage = () => {
     }
 
     return (
-        <div>
-            <h1 className="intro">{book.title}</h1>
-        </div>
+        <section className={styles.bookDetails}>
+            <div>
+                <h1 className={styles.title}>{book.title}</h1>
+                <p className={styles.author}>{book.author}</p>
+            </div>
+            <div>
+                <div className={styles.details}>
+                    <p>Publisher:<br></br>
+                    <span>{book.publisher}</span>
+                    </p>
+
+                    <p>Publish Date:<br></br>
+                    <span>{book.published_date}</span>
+                    </p>
+
+                    <p>ISBN:<br></br>
+                    <span>{book.isbn}</span>
+                    </p>
+                </div>
+                <img src={book.cover_image_url} alt="Cover Image"/>
+            </div>
+            <div className={styles.copies}>
+                <h3>Copies:</h3>
+            </div>
+            
+        </section>
     )
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../CSS/booksPage.module.scss';
-import { useLocation } from 'react-router-dom';
 import { SearchResults } from './SearchResults';
 
 export interface Book {
@@ -28,7 +27,7 @@ export const BooksPage = () => {
                 <input type="text" id="search" placeholder="Search..." value={search} onChange={ (event) => setSearch(event.target.value) } />
             </div>
             {mode === 'Ready' && <SearchResults books={books} />}
-            {mode === 'Loading' && <p>Loading...</p>}
+            {mode === 'Loading' && <p className="loading">Loading...</p>}
         </section>
     )
 }

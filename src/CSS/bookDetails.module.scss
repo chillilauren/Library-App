@@ -1,0 +1,45 @@
+.bookDetails {
+    margin: 10px 20px;
+    .title {
+        font-size: 1.3em;
+        text-align: left;
+        max-width: 80vw;
+        // background-color: steelblue;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 20px 0 10px 0;
+    }
+    .author {
+        font-size: 1.1em;
+        margin: 5px 0;
+    }
+    div:nth-child(2) {
+        display: flex;
+        // background-color: red;
+        margin: 20px 0;
+        justify-content: space-between;
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            // background-color: pink;
+            min-width: 50%;
+            line-height: 1.5em;
+            span {
+                font-weight: 600;
+            }
+        }
+        img {
+            width: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .copies {
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+    }
+}
+

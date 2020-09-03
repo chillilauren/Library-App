@@ -25,10 +25,13 @@ export const SearchResults = ({books}:SearchResultProps) => {
     }
 
     return (
-        <section className={styles.booksList}>
-            <ul>
-                {bookList}
-            </ul>
+        <section>
+            <div className={styles.booksList}>
+                <ul>
+                    {bookList}
+                </ul>
+            </div>
+            <button className="more">Load More</button>
         </section>
     )
 }
