@@ -1,0 +1,29 @@
+nav {
+    background: #E28665;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 10px 0;
+        li {
+            margin: 0 20px;
+            .navLink {
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: #89381A;
+                transition: border-bottom 3ms;
+                &:hover { 
+                    border-bottom: 2px solid #89381A;
+                }
+            }
+        }
+    }
+}
+
+// @media only screen and (min-width: 374px) {
+//     nav {
+//         // background: red;
+//     }
+// }
+
