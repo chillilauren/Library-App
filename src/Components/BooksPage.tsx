@@ -3,7 +3,8 @@ import { SearchResults } from './SearchResults';
 
 export interface Book {
     title: string;
-    author: string
+    author: string;
+    id: number
 }
 
 export const BooksPage = () => {

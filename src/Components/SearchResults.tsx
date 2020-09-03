@@ -10,11 +10,11 @@ interface SearchResultProps {
 }
 
 interface BookProps {
-    book: Book
+    book: Book;
 }
 
 const BookListItem = ({book}:BookProps) => {
-    return <li>{book.title} - {book.author}</li>
+    return <li><Link className={styles.bookItem} to={`/books/${book.id}`}>{book.title} - {book.author}</Link></li>
 }
 
 export const SearchResults = ({books, loadMore}:SearchResultProps) => {
